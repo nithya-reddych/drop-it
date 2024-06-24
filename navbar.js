@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const title = document.createElement('h1');
     title.textContent = 'Drop It';
-    title.style.color = 'white'; // Ensure the title text color is white
-    title.style.textDecoration = 'none'; // Remove underline from link
+    title.style.color = 'white';
+    title.style.textDecoration = 'none';
 
     titleLink.appendChild(title);
 
     navbarItem1.appendChild(logo);
-    navbarItem1.appendChild(titleLink); // Append the link with title
+    navbarItem1.appendChild(titleLink);
 
     const navbarItem2 = document.createElement('div');
     navbarItem2.className = 'navbar-item';
