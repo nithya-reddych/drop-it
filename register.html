@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Grocery Mart | Login</title>
+    <title>Grocery Mart | Register</title>
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
@@ -27,20 +27,14 @@
             margin-bottom: 20px;
             color: #333;
         }
-        .user-container {
+        form {
             width: 100%;
             max-width: 400px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
-        h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        
-        .form {
+        form input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -48,52 +42,65 @@
             border: 1px solid #ccc;
             font-size: 1em;
         }
-        .action-button {
-            font-family: 'Quicksand', sans-serif;
-            width: 110%;
+        form input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        form label {
+            font-size: 0.9em;
+            color: #333;
+        }
+        form button {
+            width: 100%;
             padding: 10px;
             border: none;
             border-radius: 5px;
-            color: white;
             background-color: #3BB77E;
+            color: white;
+            font-size: 1em;
             cursor: pointer;
             margin-top: 20px;
         }
-        
-        .action-button:hover {
+        form button:hover {
             background-color: #2a8f62;
         }
-        .signup {
-            font-family: 'Quicksand', sans-serif;
+        .alt-signup {
+            margin: 20px 0;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        .alt-signup img {
+            width: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .alt-signup a {
+            display: block;
+            text-decoration: none;
+            margin: 10px 0;
+            color: #333;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .alt-signup a:hover {
+            background-color: #f4f4f4;
+        }
+        .signin {
             margin-top: 20px;
             width: 100%;
             max-width: 400px;
             text-align: left;
         }
-        .signup-button {
+        .signin a {
             color: #007BFF;
-            cursor: pointer;
             text-decoration: none;
         }
-        .signup-button:hover {
+        .signin a:hover {
             text-decoration: underline;
-        }
-        .message {
-            text-align: center;
-            font-size: 16px;
-            color: red;
-            margin-bottom: 10px;
-        }
-
-        .hide-pass {
-            font-family: 'Quicksand', sans-serif;
-            font-size: 14px;
-            cursor: pointer;
-            position: absolute;
-            right: 5px;
-            top: 18px;
-            color: #333;
-            text-align: center; 
         }
         .bottom-right-img {
             position: absolute;
@@ -106,37 +113,25 @@
 <body>
     <div id="navbar"></div>
     <script src="navbar.js"></script>
-
-    <div class="user-container">
-        <div id="message" class="message"></div>
-        <h2>Login</h2>
-        <form action="login.php" method="post">
-            <input type="text" name="username" class="form" placeholder="Username" required>
-            <div style="position: relative;">
-                <input type="password" name="password" class="form" placeholder="Password" required id="password">
-                <span onclick="hidePass()" class="hide-pass">Show</span>
-            </div>
-            <button type="submit" class="action-button">Login</button>
-        </form>
-        <div class="signup">
-            Don't have an account? <a href="register.html" class="signup-button">Sign up</a>
+    <h1>Get Started Now</h1>
+    <form action="register.php" method="post">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <div>
+            <input type="checkbox" name="terms" required>
+            <label for="terms">I agree to the <a href="#">terms & policy</a></label>
         </div>
+        <button type="submit">Signup</button>
+    </form>
+    <div class="alt-signup">
+        <span>Or</span>
+        <a href="#"><img src="./assets/google.png" alt="Google"> Sign in with Google</a>
+        <a href="#"><img src="./assets/apple.png" alt="Apple"> Sign in with Apple</a>
     </div>
-
+    <div class="signin">
+        Have an account? <a href="login.html">Sign In</a>
+    </div>
     <img src="./assets/register.png" alt="register-image" class="bottom-right-img">
-
-    <script>
-        function hidePass() {
-            var passwordInput = document.getElementById('password');
-            var toggleBtn = document.querySelector('.hide-pass');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                toggleBtn.textContent = 'Hide';
-            } else {
-                passwordInput.type = 'password';
-                toggleBtn.textContent = 'Show';
-            }
-        }
-    </script>
 </body>
 </html>
