@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Grocery Mart | Register</title>
+    <title>Drop It | Register</title>
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
@@ -119,10 +119,10 @@
         <input type="email" name="email" placeholder="Email address" required>
         <input type="password" name="password" placeholder="Password" required>
         <div>
-            <input type="checkbox" name="terms" required>
+            <input type="checkbox" name="terms" id="terms" required>
             <label for="terms">I agree to the <a href="#">terms & policy</a></label>
         </div>
-        <button type="submit">Signup</button>
+        <button type="submit" id="signup-button" disabled>Signup</button>
     </form>
     <div class="alt-signup">
         <span>Or</span>
@@ -133,5 +133,10 @@
         Have an account? <a href="login.html">Sign In</a>
     </div>
     <img src="./assets/register.png" alt="register-image" class="bottom-right-img">
+    <script>
+        document.getElementById('terms').addEventListener('change', function() {
+            document.getElementById('signup-button').disabled = !this.checked;
+        });
+    </script>
 </body>
 </html>
